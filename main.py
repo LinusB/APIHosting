@@ -2,8 +2,8 @@ from fastapi import FastAPI, HTTPException
 from models import Recipe, User, Personalisation, UserProduct, UserProductWithDetails
 from typing import List
 from crud import (
-    add_recipe, get_recipes, delete_recipe, update_recipe,
-    add_user, get_user, update_user, delete_user,
+    # add_recipe, get_recipes, delete_recipe, update_recipe,
+    # add_user, get_user, update_user, delete_user,
     set_personalisation, get_personalisation, update_personalisation, delete_personalisation,
     add_user_product, get_user_products, update_user_product, delete_user_product
 )
