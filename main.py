@@ -12,24 +12,24 @@ app = FastAPI()
 print("main.py gestartet")
 
 
-@app.post("/users/{user_id}/recipes")
-def create_recipe(user_id: str, recipe: Recipe):
-    recipe_id = add_recipe(user_id, recipe)
-    return {"message": "Recipe created", "id": recipe_id}
+# @app.post("/users/{user_id}/recipes")
+# def create_recipe(user_id: str, recipe: Recipe):
+#     recipe_id = add_recipe(user_id, recipe)
+#     return {"message": "Recipe created", "id": recipe_id}
 
-@app.get("/users/{user_id}/recipes")
-def read_recipes(user_id: str):
-    return get_recipes(user_id)
+# @app.get("/users/{user_id}/recipes")
+# def read_recipes(user_id: str):
+#     return get_recipes(user_id)
 
-@app.delete("/users/{user_id}/recipes/{recipe_id}")
-def remove_recipe(user_id: str, recipe_id: str):
-    delete_recipe(user_id, recipe_id)
-    return {"message": "Recipe deleted"}
+# @app.delete("/users/{user_id}/recipes/{recipe_id}")
+# def remove_recipe(user_id: str, recipe_id: str):
+#     delete_recipe(user_id, recipe_id)
+#     return {"message": "Recipe deleted"}
 
-@app.put("/users/{uid}/recipes/{recipe_id}")
-def edit_recipe(uid: str, recipe_id: str, recipe: Recipe):
-    update_recipe(uid, recipe_id, recipe)
-    return {"message": "Recipe updated successfully"}
+# @app.put("/users/{uid}/recipes/{recipe_id}")
+# def edit_recipe(uid: str, recipe_id: str, recipe: Recipe):
+#     update_recipe(uid, recipe_id, recipe)
+#     return {"message": "Recipe updated successfully"}
 
 # @app.post("/users/{uid}/products/")
 # def create_product(uid: str, product: Product):
@@ -51,27 +51,27 @@ def edit_recipe(uid: str, recipe_id: str, recipe: Recipe):
 #     return {"message": "Product updated successfully"}
 
 # --- USERDATA ---
-@app.get("/users/{uid}/userdata")
-def read_user(uid: str):
-    user = get_user(uid)
-    if user:
-        return user
-    raise HTTPException(status_code=404, detail="User not found")
+# @app.get("/users/{uid}/userdata")
+# def read_user(uid: str):
+#     user = get_user(uid)
+#     if user:
+#         return user
+#     raise HTTPException(status_code=404, detail="User not found")
 
-@app.post("/users/{uid}/userdata")
-def create_user(uid: str, user: User):
-    add_user(uid, user)
-    return {"message": "User profile created"}
+# @app.post("/users/{uid}/userdata")
+# def create_user(uid: str, user: User):
+#     add_user(uid, user)
+#     return {"message": "User profile created"}
 
-@app.put("/users/{uid}/userdata/{doc_id}")
-def edit_user(uid: str, doc_id: str, user: User):
-    update_user(uid, doc_id, user)
-    return {"message": "User profile updated"}
+# @app.put("/users/{uid}/userdata/{doc_id}")
+# def edit_user(uid: str, doc_id: str, user: User):
+#     update_user(uid, doc_id, user)
+#     return {"message": "User profile updated"}
 
-@app.delete("/users/{uid}/userdata/{doc_id}")
-def remove_user(uid: str, doc_id: str):
-    delete_user(uid, doc_id)
-    return {"message": "User profile deleted"}
+# @app.delete("/users/{uid}/userdata/{doc_id}")
+# def remove_user(uid: str, doc_id: str):
+#     delete_user(uid, doc_id)
+#     return {"message": "User profile deleted"}
 
 # --- PERSONALISATION ---
 @app.post("/users/{uid}/personalisation")
