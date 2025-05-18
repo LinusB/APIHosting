@@ -2,12 +2,12 @@ from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
 
-# class Recipe(BaseModel):
-#     name: str
-#     description: str
-#     duration: int
-#     tags: List[str]
-#     ingredients: List[str]
+class Recipe(BaseModel):
+    name: str
+    description: str
+    duration: int
+    tags: List[str]
+    ingredients: List[str]
 
 # class Product(BaseModel):
 #     productId: str
@@ -28,12 +28,12 @@ class UserProductWithDetails(UserProduct):
     productName: Optional[str]
     categoryName: Optional[str]
 
-# class User(BaseModel):
-#     createdAt: datetime
-#     email: str
-#     lastname: str
-#     name: str
-#     password: str
+class User(BaseModel):
+    createdAt: datetime
+    email: str
+    lastname: str
+    name: str
+    password: str
 
 class Personalisation(BaseModel):
     Abnehmen: bool
